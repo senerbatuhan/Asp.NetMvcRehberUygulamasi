@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Canonka\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Canonka\\.nuget\\packages"
+    ]
+  }
+}
