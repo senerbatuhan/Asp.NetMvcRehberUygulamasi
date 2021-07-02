@@ -7,6 +7,10 @@
     <td><img src="https://github.com/senerbatuhan/Asp.NetMvcRehberUygulamasi/blob/main/Resimler/Screenshot_1.jpg" width="100%"></td>
     <td><img src="https://github.com/senerbatuhan/Asp.NetMvcRehberUygulamasi/blob/main/Resimler/Screenshot_2.jpg" width="100%"></td> 
   </tr>
+    <tr>
+    <td><img src="https://github.com/senerbatuhan/Asp.NetMvcRehberUygulamasi/blob/main/Resimler/Screenshot_3.jpg" width="100%"></td>
+    <td><img src="https://github.com/senerbatuhan/Asp.NetMvcRehberUygulamasi/blob/main/Resimler/Screenshot_4.jpg" width="100%"></td> 
+  </tr>
 </table> 
 <br/>
 <hr>
