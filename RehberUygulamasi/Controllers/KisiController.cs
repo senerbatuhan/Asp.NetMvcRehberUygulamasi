@@ -14,17 +14,14 @@ namespace RehberUygulamasi.Controllers
         MvcRehberContext db = new MvcRehberContext();
         public IActionResult Index(string ara)
         {
+            //verileri kisi.Ad'a göre sıralayarak çektik
             var kisiler = from kisi in db.Kisiler orderby kisi.Ad select kisi;
             if(!string.IsNullOrEmpty(ara))
             {
+                //ara boş gelmediyse kisiler değişkenine ad soyad ve telefon içerisinden eşleşenleri getirip Ad'a göre sıraladık. 
                 kisiler = kisiler.Where(k => k.Ad.Contains(ara) || k.Soyad.Contains(ara) || k.Telefon.Contains(ara)).OrderBy(k => k.Ad);
             }
             return View(kisiler.ToList());
-
-
-            //Veritabanindan kisileri liste olarak cekip index sayfasına gonderdik
-            //var kisiler = db.Kisiler.ToList();
-            //return View(kisiler);
         }
         [HttpGet]
         public IActionResult Ekle()
@@ -47,10 +44,6 @@ namespace RehberUygulamasi.Controllers
                 TempData["HataliMesaj"] = "Ekleme işlemi BAŞARISIZ!!!";
                 throw;
             }
-
-
-
-
             return RedirectToAction("Index");
         }
 
@@ -99,6 +92,18 @@ namespace RehberUygulamasi.Controllers
             db.SaveChanges();
             TempData["BasariliMesaj"] = "Silme işlemi başarıyla gerçekleşti...";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Detay(int id)
+        {
+            var kisi = db.Kisiler.Find(id);
+            if (kisi == null)
+            {
+                TempData["HataliMesaj"] = "Güncellenmek istenen kayıt bulunamadı...";
+                return RedirectToAction("Index");
+            }
+
+            return View(kisi);
         }
     }
 }
